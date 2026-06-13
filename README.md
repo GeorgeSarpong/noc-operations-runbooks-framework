@@ -32,6 +32,87 @@ This framework is informed by 8+ years of 24/7 operations experience managing:
 
 ## Repository Structure
 
+noc-operations-runbooks-framework/
+
+│
+
+├── docs/
+
+│   └── noc-overview.md                    # NOC framework overview
+
+│
+
+├── alert-management/
+
+│   ├── alert-triage-guide.md              # Alert triage procedure
+
+│   ├── false-positive-management.md       # False positive handling
+
+│   └── alert-fatigue-prevention.md        # Alert fatigue strategies
+
+│
+
+├── escalation/
+
+│   ├── escalation-matrix.md              # Escalation contacts
+
+│   ├── communication-templates.md        # Notification templates
+
+│   └── stakeholder-notifications.md      # Stakeholder comms
+
+│
+
+├── shift-management/
+
+│   ├── shift-handover-procedure.md        # Handover process
+
+│   ├── shift-checklist.md                # Start/end checklist
+
+│   └── on-call-procedure.md              # On-call guidelines
+
+│
+
+├── sla-management/
+
+│   ├── sla-definitions.md                # SLA definitions
+
+│   ├── sla-breach-procedure.md           # Breach response
+
+│   └── uptime-reporting.md              # Uptime reporting
+
+│
+
+├── incident-management/
+
+│   ├── p1-response-procedure.md          # P1 critical response
+
+│   ├── p2-response-procedure.md          # P2 high response
+
+│   └── major-incident-procedure.md       # Major incident process
+
+│
+
+├── post-incident/
+
+│   ├── pir-template.md                   # PIR template
+
+│   ├── rca-template.md                   # RCA template
+
+│   └── lessons-learned.md               # Lessons learned
+
+│
+
+├── metrics/
+
+│   ├── noc-kpis.md                       # NOC KPI definitions
+
+│   └── performance-reporting.md          # Reporting templates
+
+│
+
+└── images/
+
+└── README.md                          # Architecture diagrams
 ---
 
 ##  Alert Management Framework
@@ -47,6 +128,55 @@ This framework is informed by 8+ years of 24/7 operations experience managing:
 
 ### Alert Triage Flowchart
 ---
+Alert Fires
+
+│
+
+▼
+
+Is it a known false positive?
+
+│
+
+├─ YES → Suppress and document → Review threshold
+
+│
+
+└─ NO → Acknowledge immediately
+
+│
+
+▼
+
+Check affected system
+
+│
+
+▼
+
+Assess business impact
+
+│
+
+├─ P1/P2 → Page on-call immediately
+
+│
+
+└─ P3/P4 → Create ticket and investigate
+
+│
+
+▼
+
+Apply known fix if available
+
+│
+
+├─ Fixed → Document and close
+
+│
+
+└─ Not Fixed → Escalate
 
 ## Shift Handover Procedure
 
